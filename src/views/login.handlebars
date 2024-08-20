@@ -1,0 +1,24 @@
+<div class="login-container">
+    <h2>Login</h2>
+    <form action="/login" method="post">
+
+        <label for="email">Email: </label>
+        <input type="email" id="email" name="email" autocomplete="off" required>
+
+        <label for="password">Password: </label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Login</button>
+        
+    </form>
+
+    <div class="github-container">
+        <a href="/api/auth/github">
+            <button type="button" class="github-login">
+                <i class="fab fa-github"></i> Login with github
+            </button>
+        </a>
+    </div>
+    <p>No tienes una cuenta? <a href="/register">Registrarte</a></p>
+</div>
+

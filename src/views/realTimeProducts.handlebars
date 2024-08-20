@@ -1,0 +1,41 @@
+{{> header}}
+
+<div>
+    <h3>Lista de productos</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titulo</th>
+                <th>Descripcion</th>
+                <th>Precio</th>
+                <th>Codigo</th>
+                <th>Status</th>
+                <th>Stock</th>
+                <th>Category</th>
+                <th>Imagen</th>
+            </tr>
+        </thead>
+        <tbody id="productos-body">
+        </tbody>
+    </table>
+    <h2>Agregar producto</h2>
+    <form id="producto-form">
+        <label for="titulo">Titulo:</label>
+        <input type="text" id="titulo" name="titulo" required>
+        <label for="descripcion">Descripcion:</label>
+        <input type="text" id="descripcion" name="descripcion" required>
+        <label for="precio">Precio:</label>
+        <input type="text" id="precio" name="precio" required>
+        <label for="codigo">Codigo:</label>
+        <input type="text" id="codigo" name="codigo" required>
+        <label for="stock">Stock:</label>
+        <input type="text" id="stock" name="stock" required>
+        <label for="categoria">Categoria:</label>
+        <input type="text" id="categoria" name="categoria" required>
+        <button type="submit">Agregar Producto</button>
+    </form>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>

@@ -1,0 +1,13 @@
+{"level":"info","message":"Corriendo aplicación en el puerto 8080","timestamp":"2024-07-10T14:29:01.483Z"}
+{"level":"http","message":"GET /loggerTest","timestamp":"2024-07-10T14:29:16.161Z"}
+{"level":"debug","message":"Debug log","timestamp":"2024-07-10T14:29:16.162Z"}
+{"level":"http","message":"HTTP log","timestamp":"2024-07-10T14:29:16.163Z"}
+{"level":"info","message":"Info log","timestamp":"2024-07-10T14:29:16.163Z"}
+{"level":"warning","message":"Warning log","timestamp":"2024-07-10T14:29:16.164Z"}
+{"level":"error","message":"Error log","timestamp":"2024-07-10T14:29:16.164Z"}
+{"level":"http","message":"GET /loggerTest","timestamp":"2024-07-10T15:24:20.528Z"}
+{"level":"debug","message":"Debug log","timestamp":"2024-07-10T15:24:20.529Z"}
+{"level":"http","message":"HTTP log","timestamp":"2024-07-10T15:24:20.530Z"}
+{"level":"info","message":"Info log","timestamp":"2024-07-10T15:24:20.530Z"}
+{"level":"warning","message":"Warning log","timestamp":"2024-07-10T15:24:20.531Z"}
+{"level":"error","message":"Error log","timestamp":"2024-07-10T15:24:20.531Z"}

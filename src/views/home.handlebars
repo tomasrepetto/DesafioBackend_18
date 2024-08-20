@@ -1,0 +1,47 @@
+{{> header}}
+
+<div>
+    <h1>Bibliotecas de Discos</h1>
+    <h3>Lista de productos:</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titulo</th>
+                <th>Descripcion</th>
+                <th>Precio</th>
+                <th>Codigo</th>
+                <th>Status</th>
+                <th>Stock</th>
+                <th>Category</th>
+                <th>Imagen</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each productos}}
+            <tr>
+                <td>{{this._id}}</td>
+                <td>{{this.title}}</td>
+                <td>{{this.description}}</td>
+                <td>{{this.price}}</td>
+                <td>{{this.code}}</td>
+                <td>
+                    {{#if this.status}}
+                    Disponible
+                    {{else}}
+                    No Disponible
+                    {{/if}}
+                </td>
+                <td>
+                    {{#if this.stock}}
+                    Si
+                    {{else}}
+                    No
+                    {{/if}}</td>
+                <td>{{this.category}}</td>
+                <td>{{this.thumbnails}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

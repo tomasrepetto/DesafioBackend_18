@@ -1,0 +1,29 @@
+<header>
+    <div class="header-container">
+        <h1>{{title}}</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/products">Productos</a>
+            <a href="/realtimeproducts">Nuevo Producto</a>
+            <a href="/cart">Carrito</a>
+            <a href="/api-docs" style="color: chartreuse; font-weight:bold">API Docs</a>
+            {{#if user}}
+                <p>Bienvenido, {{user.email}}</p>
+                <a class="logout" href="/api/auth/logout">Cerrar sesión</a>
+            {{else}}
+                <a class="log" href="/login">Iniciar sesión</a>
+                <a class="log" href="/register">Registrarse</a>
+            {{/if}}
+        </nav>
+    </div>
+</header>
+
+
+
+
+
+
+
+
+
+

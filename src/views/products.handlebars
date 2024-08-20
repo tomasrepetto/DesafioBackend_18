@@ -1,0 +1,100 @@
+{{> header}}
+
+<div>
+    <h1>Bibliotecas de Discos</h1>
+    <h3>Lista de productos:</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titulo</th>
+                <th>Descripcion</th>
+                <th>Precio</th>
+                <th>Codigo</th>
+                <th>Status</th>
+                <th>Stock</th>
+                <th>Category</th>
+                <th>Imagen</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each result.payload}}
+            <tr>
+                <td>{{this._id}}</td>
+                <td>{{this.title}}</td>
+                <td>{{this.description}}</td>
+                <td>{{this.price}}</td>
+                <td>{{this.code}}</td>
+                <td>
+                    {{#if this.status}}
+                    Disponible
+                    {{else}}
+                    No Disponible
+                    {{/if}}
+                </td>
+                <td>
+                    {{#if this.stock}}
+                    Si
+                    {{else}}
+                    No
+                    {{/if}}</td>
+                <td>{{this.category}}</td>
+                <td>
+                    {{#if this.thumbnails.length}}
+                    <a href="{{this.thumbnails.[0]}}" target="_blank">{{this.thumbnails.[0]}}</a>
+                    {{else}}
+                    No hay Imagen
+                    {{/if}}
+                </td>
+                <td>
+                    <button class="cart-button" onclick="addToCart('{{this._id}}')">
+                        <i class="fas fa-shopping-cart cart-icon"></i>
+                    </button>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+    <div class="pagination">
+        <span>Limite por pagina: {{result.limit}}</span><br>
+
+        {{#if result.query}}
+        <span>Filtrado por: {{result.query}}</span><br>
+        {{/if}}
+
+        {{#if result.hastPrePage}}
+        <a href="?page={{result.prevPage}}&limit={{result.limit}}{{#if result.query}}&query={{result.query}}{{/if}}">Anterior</a>
+        {{/if}}
+
+        <span>Pagina {{result.page}} de {{result.totalPages}}</span>
+
+        {{#if result.hastNextPage}}
+        <a href="?page={{result.nextPage}}&limit={{result.limit}}{{#if result.query}}&query={{result.query}}{{/if}}">Siguiente</a>
+        {{/if}}
+    </div>
+
+    <div>
+        <i class="fas fa-shopping-cart cart-icon"></i>
+        <span id="cart-count">Tu carrito: 0 productos</span>
+    </div>
+
+    <script>
+        function addToCart(productId) {
+            const idCart = '663bc8a8c33aee20c3de24ee';
+            fetch(`api/carts/${idCart}/product/${productId}`,{
+                method: 'POST',
+                headers:{
+                    'Content-Type': 'application/json',
+                },
+            }).then(resp=>resp.json())
+            .then(data=>{
+                console.log(data);
+            })
+            .catch(error=>{
+                console.log('error: ', error)
+            })
+        }
+    </script>
+</div>

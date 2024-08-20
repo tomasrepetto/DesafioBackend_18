@@ -1,0 +1,14 @@
+{{> header}}
+
+<div>
+    <h3>Lista de discos de un carrito:</h3>
+
+    {{#each carrito.products}}
+    <div>
+        <h4>Disco: {{this.id.title}}</h4>
+        <p>Artista: {{this.id.description}}</p>
+        <p>Precio: ${{this.id.price}}</p>
+        <p>Cantidad: {{this.quantity}}</p>
+    </div>
+    {{/each}}
+</div>
